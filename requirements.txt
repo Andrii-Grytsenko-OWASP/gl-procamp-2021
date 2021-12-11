@@ -4,3 +4,4 @@ pytest-html
 pytest-order
 allure-pytest
 alchemize
+selenium

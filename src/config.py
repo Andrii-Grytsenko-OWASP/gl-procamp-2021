@@ -1,0 +1,2 @@
+BASE_URL = "https://app.cosmosid.com/"
+WEB_DRIVER = "Chrome"
