@@ -1,13 +1,13 @@
 from pytest import *
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from src import config as cfg
-from src.enums import *
+from src.config.config import CFG
+from src.enums import WebDrivers
 
 
 @fixture(scope="class")
 def web_driver():
-    if cfg.WEB_DRIVER == WebDrivers.WD_CHROME:
+    if WebDrivers(CFG.WEB_DRIVER) == WebDrivers.WD_CHROME:
         options = Options()
         # options.add_argument('--headless')
         # options.add_argument('--disable-gpu')

@@ -1,3 +1,3 @@
 README.md
 
-Edited from Windows station
+Tests from src\tests directory require a chromedriver.exe in bin\ directory
