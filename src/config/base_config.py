@@ -2,7 +2,7 @@ import os.path
 from abc import ABC
 from os import environ
 
-from src.enums import Environments
+from src.helpers.enums import Environments
 from src.helpers import utils
 from src.providers.config_providers.base_config_provider import BaseConfigProvider
 from src.providers.config_providers.config_dict_provider import ConfigFromDictionaryProvider

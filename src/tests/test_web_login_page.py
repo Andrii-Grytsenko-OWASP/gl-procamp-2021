@@ -14,7 +14,3 @@ class TestWebLoginPage:
         login_page.login(dp_login_page["email"], dp_login_page["password"])
         assert True
         logger.info("Test PASSED")
-
-
-if __name__ == "__main__":
-    pass

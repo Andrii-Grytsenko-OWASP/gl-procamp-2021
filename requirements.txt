@@ -5,3 +5,4 @@ pytest-order
 allure-pytest
 alchemize
 selenium
+python-dotenv
