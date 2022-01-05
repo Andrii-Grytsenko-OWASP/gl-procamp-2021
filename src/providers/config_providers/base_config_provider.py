@@ -7,9 +7,9 @@ class BaseConfigProvider(ABC):
         pass
 
 
-class BaseDictConfigProvider(BaseConfigProvider, ABC):
+class BaseDictConfigProvider(BaseConfigProvider):
     def __init__(self):
-        self.config_dict = None
+        self.config_source = {}
 
-    def get(self, key: str):
-        return self.config_dict.get(key, None)
+    def get(self, key: str, value: str = None):
+        return self.config_source.get(key, value)
