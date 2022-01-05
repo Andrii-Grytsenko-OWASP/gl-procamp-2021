@@ -1,6 +1,6 @@
 from selenium.webdriver.common.by import By
 
-class Login:
+class LoginPage:
     # div_dialog = (By.XPATH("//div[@role='dialog']"))
     # button_dialog_ok = (By.XPATH("//div[@role='dialog']/div/button[2]"))
     # text_email = (By.ID("email"))
@@ -23,16 +23,16 @@ class Login:
         self.wd = webdriver
 
     def is_dialog_opened(self):
-        return self.wd.find_element_by_xpath(Login.div_dialog).is_displayed()
+        return self.wd.find_element_by_xpath(LoginPage.div_dialog).is_displayed()
 
     def close_dialog(self):
-        self.wd.find_element_by_xpath(Login.button_dialog_ok).click()
+        self.wd.find_element_by_xpath(LoginPage.button_dialog_ok).click()
         return self
 
     def login(self, email: str, password: str):
         if self.is_dialog_opened():
             self.close_dialog()
-        self.wd.find_element_by_id(Login.text_email).send_keys(email)
-        self.wd.find_element_by_id(Login.text_password).send_keys(password)
-        self.wd.find_element_by_id(Login.button_sign_in).click()
+        self.wd.find_element_by_id(LoginPage.text_email).send_keys(email)
+        self.wd.find_element_by_id(LoginPage.text_password).send_keys(password)
+        self.wd.find_element_by_id(LoginPage.button_sign_in).click()
         return self

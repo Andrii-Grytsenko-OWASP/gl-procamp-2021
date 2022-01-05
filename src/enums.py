@@ -10,3 +10,4 @@ class Environments(Enum):
     DEVEL = "dev"
     TEST = "test"
     PROD = "prod"
+
