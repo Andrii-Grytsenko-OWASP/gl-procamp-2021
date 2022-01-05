@@ -37,8 +37,7 @@ class BaseMultiSourcedConfig(BaseConfig):
     def __init__(self, environment=BaseConfig.DEFAULT_ENVIRONMENT, dictionary_config={}):
         super().__init__(environment)
         self.add_provider(ConfigFromEnvironmentProvider())
-        json_file = f"{utils.get_root_path([os.path.abspath(__file__)])}{os.path.sep}src{os.path.sep}config{os.path.sep}presets{os.path.sep}{self.TARGET_ENVIRONMENT}.config.json"
-        print(json_file)
+        json_file = f"{utils.get_root_path()}{os.path.sep}src{os.path.sep}config{os.path.sep}presets{os.path.sep}{self.TARGET_ENVIRONMENT}.config.json"
         if os.path.exists(json_file):
             self.add_provider(ConfigFromJsonProvider(json_file))
         self.add_provider(ConfigFromDictionaryProvider(dictionary_config))
@@ -47,6 +46,3 @@ class BaseMultiSourcedConfig(BaseConfig):
         if provider is not None:
             self.config_providers.append(provider)
         return self
-
-    def _add_dot_dot_slash(self):
-        pass
