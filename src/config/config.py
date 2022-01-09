@@ -1,5 +1,5 @@
 from src.config.base_config import *
-from src.providers.config_providers.config_dotenv_provider import ConfigFromDotEnvProvider
+from src.providers.config.config_dotenv import ConfigFromDotEnvProvider
 
 
 class Config(BaseMultiSourcedConfig):

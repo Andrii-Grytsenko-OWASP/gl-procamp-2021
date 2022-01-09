@@ -1,6 +1,6 @@
 import json
 
-from src.providers.config_providers.base_config_provider import BaseDictConfigProvider
+from src.providers.config.base_config import BaseDictConfigProvider
 
 
 class ConfigFromDictionaryProvider(BaseDictConfigProvider):
