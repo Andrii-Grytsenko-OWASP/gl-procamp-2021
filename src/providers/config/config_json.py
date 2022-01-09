@@ -1,10 +1,10 @@
 from json import load
 
-from src.providers.config_providers.base_config_provider import BaseDictConfigProvider
+from src.providers.config.base_config import BaseDictConfigProvider
 
 
 class ConfigFromJsonProvider(BaseDictConfigProvider):
-    def __init__(self, json_config_file):
+    def __init__(self, json_config_file: str):
         super(ConfigFromJsonProvider, self).__init__()
         self.config_source = {}
         try:
