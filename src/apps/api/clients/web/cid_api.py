@@ -14,9 +14,13 @@ class CidWebApiClient:
         self._auth_provider = auth_provider(config)
         self._session = None
 
-    def login(self, user: User):
-        self._session = self._auth_provider.login(CidEndpoints.login, user)
-        return self
+    def login(self, user: User) -> ApiResponse:
+        try:
+            self._session = self._auth_provider.login(CidEndpoints.login, user)
+            return ApiResponse(200, ApiResponseType.ok, self)
+        except:
+            self._session = None
+            return ApiResponse(401, ApiResponseType.error, self)
 
     def dashboard(self) -> ApiResponse:
         if self._session is None:

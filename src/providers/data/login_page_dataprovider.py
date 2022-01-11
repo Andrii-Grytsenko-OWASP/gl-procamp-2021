@@ -2,10 +2,10 @@
 from src.config.config import CFG
 
 login_data = [
-    ({"description": "Login with invalid credentials",
+    ({"description": "Sign in on login page with invalid credentials",
       "email": "valid@ema.il", "password": "secret_password",
       "expected_result": False}),
-    ({"description": "Login with valid credentials",
+    ({"description": "Sign in on login page with valid credentials",
       "email": CFG.USER_EMAIL, "password": CFG.USER_PASSWORD,
       "expected_result": True}),
 ]
