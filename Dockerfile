@@ -1,13 +1,12 @@
 FROM python:3.9-slim
 
-COPY ./requirements.txt /app/requirements.txt
-RUN pip install -r /app/requirements.txt
-
-COPY ./src /app/src
-COPY ./tests /app/tests
-COPY ./logs /app/logs
-
 WORKDIR /app
 
+COPY requirements.txt ./requirements.txt
+RUN pip install -r requirements.txt
+
+COPY . .
+RUN mkdir logs
+
 ENTRYPOINT [ "pytest", "-q", "--no-summary", "--no-header" ]
-CMD [ "/app/tests/test_api_dashboard.py" ]
+CMD [ "tests/test_api_dashboard.py" ]
