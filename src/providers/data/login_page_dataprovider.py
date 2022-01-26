@@ -1,7 +1,14 @@
-# Data for testing Login Page
+# Data for testing LoginPage Page
+from src.config.config import CFG
+
 login_data = [
-    ({"email": "valid@ema.il", "password": "secret_password", "exit_code": 200}),
+    ({"description": "Sign in on login page with invalid credentials",
+      "email": "valid@ema.il", "password": "secret_password",
+      "expected_result": False}),
+    ({"description": "Sign in on login page with valid credentials",
+      "email": CFG.USER_EMAIL, "password": CFG.USER_PASSWORD,
+      "expected_result": True}),
 ]
 login_data_ids = [
-    f'Login with credentials [Email: {item["email"]}], Password: {item["password"]}, Expected code={item["exit_code"]}'
+    f'Test description [{item["description"]}]'
     for item in login_data]
