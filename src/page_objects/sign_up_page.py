@@ -11,6 +11,7 @@ class SignUpPage(BasePage):
     text_confirm_password = (By.ID, "confirm_password")
     checkbox_terms = (By.ID, "termsCheckbox")
     button_sign_up = (By.ID, "signUpButton")
+    text_sign_in = (By.XPATH, "//*[@id='mount']/div/div[1]/div/div/h1[contains(text(),'')]")
 
     def sign_up(self, name: str, job_title: str, organization: str, email: str, password: str):
         self.send_keys(SignUpPage.text_name, name)
@@ -22,3 +23,6 @@ class SignUpPage(BasePage):
         self.click(SignUpPage.checkbox_terms)
         self.click(SignUpPage.button_sign_up)
         return self
+
+    def signed_up(self):
+        return self.exists(SignUpPage.text_sign_in)

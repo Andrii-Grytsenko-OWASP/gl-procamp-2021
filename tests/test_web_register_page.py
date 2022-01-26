@@ -21,5 +21,5 @@ class TestWebRegisterPage:
         current_url = web_driver.current_url
         logger.info(login_url)
         logger.info(current_url)
-        assert ((current_url != login_url) == dp_register_page["expected_result"])
+        assert (signup_page.signed_up() == dp_register_page["expected_result"])
         logger.info("Test PASSED")
